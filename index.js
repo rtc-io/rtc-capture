@@ -3,8 +3,7 @@ var detect = require('rtc-core/detect');
 
 // patch navigator getUserMedia
 navigator.getUserMedia = navigator.getUserMedia ||
-  detect.call(navigator, 'getUserMedia') ||
-  require('./not-supported');
+  detect.call(navigator, 'getUserMedia');
 
 /**
   # rtc-capture
@@ -50,11 +49,15 @@ module.exports = function(constraints, opts, callback) {
         return callback(err);
       }
 
+      if (typeof navigator.getUserMedia != 'function') {
+        return callback(new Error('plugin does not support media capture'));
+      }
+
       navigator.getUserMedia(constraints, handleCapture, callback);
     });
   }
 
-  if (typeof getUserMedia != 'function') {
+  if (typeof navigator.getUserMedia != 'function') {
     return callback(new Error('getUserMedia not supported'));
   }
 
