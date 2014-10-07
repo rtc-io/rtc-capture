@@ -26,7 +26,24 @@ capture({ audio: true, video: true }, function(err, stream) {
 
 ## Example with using Plugins
 
-ERROR: could not find: 
+```js
+var capture = require('rtc-capture');
+var opts = {
+  plugins: [
+    require('rtc-plugin-nicta-ios'),
+    require('rtc-plugin-temasys')
+  ]
+};
+
+capture({ audio: true, video: true }, opts, function(err, stream) {
+  if (err) {
+    return console.error('could not capture stream: ', err);
+  }
+
+  console.log('captured stream: ', stream);
+});
+
+```
 
 ## Reference
 
