@@ -11,7 +11,18 @@ support for rtc.io plugins.
 
 ## Example Usage
 
-ERROR: could not find: 
+```js
+var capture = require('rtc-capture');
+
+capture({ audio: true, video: true }, function(err, stream) {
+  if (err) {
+    return console.error('could not capture stream: ', err);
+  }
+
+  console.log('captured stream: ', stream);
+});
+
+```
 
 ## Example with using Plugins
 
