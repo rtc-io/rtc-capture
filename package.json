@@ -25,5 +25,9 @@
   "homepage": "https://github.com/rtc-io/rtc-capture",
   "dependencies": {
     "rtc-core": "^3.1.0"
+  },
+  "devDependencies": {
+    "rtc-plugin-nicta-ios": "^1.1.2",
+    "rtc-plugin-temasys": "0.0.2"
   }
 }
