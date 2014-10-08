@@ -1,6 +1,6 @@
 {
   "name": "rtc-capture",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Cross browser getUserMedia implementation with support for rtc.io plugins",
   "main": "index.js",
   "scripts": {
