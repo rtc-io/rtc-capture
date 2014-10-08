@@ -44,7 +44,7 @@ module.exports = function(constraints, opts, callback) {
   // see if we are using a plugin
   pinst = plugin((opts || {}).plugins);
   if (pinst) {
-    pinst.init(opts, function(err) {
+    return pinst.init(opts, function(err) {
       if (err) {
         return callback(err);
       }
