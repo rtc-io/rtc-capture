@@ -4,7 +4,7 @@
   "description": "Cross browser getUserMedia implementation with support for rtc.io plugins",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "testling -x ./.travis/start-$BROWSER.sh",
     "gendocs": "gendocs > README.md"
   },
   "stability": "unstable",
@@ -23,11 +23,17 @@
     "url": "https://github.com/rtc-io/rtc-capture/issues"
   },
   "homepage": "https://github.com/rtc-io/rtc-capture",
+  "testling": {
+    "files": "test/all.js"
+  },
   "dependencies": {
     "rtc-core": "^3.1.0"
   },
   "devDependencies": {
+    "cog": "^1.0.0",
     "rtc-plugin-nicta-ios": "^1.1.2",
-    "rtc-plugin-temasys": "0.0.2"
+    "rtc-plugin-temasys": "0.0.2",
+    "tape": "^3.0.0",
+    "testling": "^1.7.1"
   }
 }
