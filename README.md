@@ -8,7 +8,7 @@ support for rtc.io plugins.
 [![NPM](https://nodei.co/npm/rtc-capture.png)](https://nodei.co/npm/rtc-capture/)
 
 [![Build Status](https://img.shields.io/travis/rtc-io/rtc-capture.svg?branch=master)](https://travis-ci.org/rtc-io/rtc-capture) [![unstable](https://img.shields.io/badge/stability-unstable-yellowgreen.svg)](https://github.com/dominictarr/stability#unstable) 
-[![Gitter chat](https://badges.gitter.im/rtc-io.png)](https://gitter.im/rtc-io)
+[![Gitter chat](https://badges.gitter.im/rtc-io/discuss.png)](https://gitter.im/rtc-io/discuss)
 
 
 
