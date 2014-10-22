@@ -27,7 +27,7 @@
     "files": "test/all.js"
   },
   "dependencies": {
-    "rtc-core": "^3.1.0"
+    "rtc-core": "^4.0.0"
   },
   "devDependencies": {
     "cog": "^1.0.0",
