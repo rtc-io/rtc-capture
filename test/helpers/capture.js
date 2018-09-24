@@ -3,6 +3,6 @@ var extend = require('cog/extend');
 
 module.exports = function(constraints, opts, callback) {
   return capture(extend({
-    fake: typeof __testlingConsole != 'undefined'
+    fake: true
   }, constraints), opts, callback);
 };
