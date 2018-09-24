@@ -36,6 +36,18 @@ module.exports = function(constraints, opts, callback) {
     callback(null, stream);
   }
 
+  function capture() {
+    // Check if we have support for the promises-based `navigator.mediaDevices.getUserMedia` option
+    if (navigator.mediaDevices && typeof navigator.mediaDevices.getUserMedia === 'function') {
+      return navigator.mediaDevices.getUserMedia(constraints).then(handleCapture).catch(callback);
+    }
+    // If we don't, default back to the old detected getUserMedia options
+    if (typeof navigator.getUserMedia != 'function') {
+      return callback(new Error('getUserMedia not supported'));
+    }
+    return navigator.getUserMedia(constraints, handleCapture, callback);
+  }
+
   if (typeof opts == 'function') {
     callback = opts;
     opts = {};
@@ -52,14 +64,9 @@ module.exports = function(constraints, opts, callback) {
       if (typeof navigator.getUserMedia != 'function') {
         return callback(new Error('plugin does not support media capture'));
       }
-
-      navigator.getUserMedia(constraints, handleCapture, callback);
+      capture();
     });
   }
 
-  if (typeof navigator.getUserMedia != 'function') {
-    return callback(new Error('getUserMedia not supported'));
-  }
-
-  navigator.getUserMedia(constraints, handleCapture, callback);
+  capture();
 };
