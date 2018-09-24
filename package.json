@@ -36,6 +36,7 @@
     "rtc-plugin-nicta-ios": "^1.3.4",
     "rtc-plugin-temasys": "^1.1.0",
     "tap-spec": "^4.0.2",
+    "tape": "^3.0.0",
     "travis-multirunner": "^4.3.1"
   }
 }
